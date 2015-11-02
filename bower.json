@@ -2,7 +2,7 @@
     "name": "jsyg-selection",
     "authors" : ["Yannick Bochatay"],
     "description" : "Mouse selection plugin for JSYG framework",
-    "main": ["JSYG.Pencil.js","JSYG.Pencil.css"],
+    "main": ["JSYG.Selection.js","JSYG.Selection.css"],
     "moduleType": [
         "amd",
         "globals"
