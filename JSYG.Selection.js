@@ -42,7 +42,7 @@
         
         if (arg) this.setNode(arg);
         if (opt) this.enable(opt);
-    };
+    }
     
     Selection.prototype = new JSYG.StdConstruct();
     
@@ -155,6 +155,11 @@
     Selection.prototype.classOver = 'selectOver';
     
     /**
+     * Options du plugin Resizable à ajouter (pour le tracé souris)
+     */
+    Selection.prototype.resizableOptions = null;
+    
+    /**
      * sélectionne un élément
      * @param item argument JSYG à ajouter à la sélection
      * @param e Event (dans le cas à la méthode est appelée depuis un évènement)
@@ -262,7 +267,7 @@
             inverse:true
         });
         
-        if (this.resizableOptions) resize.set(resizableOptions);
+        if (this.resizableOptions) resize.set(this.resizableOptions);
         
         resize.on('dragstart',function(e) {
             
@@ -343,7 +348,7 @@
             new JSYG(this).remove();
         });
         
-        resize.on('end',function(e) { new JSYG(this).remove(); });
+        resize.on('end',function() { new JSYG(this).remove(); });
         
         resize.start(e);
         
@@ -456,7 +461,7 @@
             }
         };
         
-        function mouseup(e) { drawing = false; }
+        function mouseup() { drawing = false; }
         
         function shortCutSelectAll(e) {
             e.preventDefault();
