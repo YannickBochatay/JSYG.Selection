@@ -223,13 +223,14 @@
      */
     Selection.prototype.deselectAll = function(e) {
         
-        var that = this;
+        var that = this,
+            selected = this.selected.slice();
         
         new JSYG(this.list).removeClass(this.classSelected,this.classOver); //par précaution
         
         while (this.selected.length > 0) this.removeElmt(this.selected[0],e);
         
-        this.trigger('deselectedlist',this.node,e,this.selected);
+        this.trigger('deselectedlist',this.node,e,selected);
         
         this.selectedOver.forEach(function(elmt) {
             elmt = new JSYG(elmt).removeClass(that.classSelected);
