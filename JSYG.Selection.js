@@ -3,7 +3,7 @@
 
 (function(factory) {
     
-    if (typeof define != "undefined" && define.amd) define("jsyg-selection",["jsyg","jsyg-resizable","jquery-hotkeys"],factory);
+    if (typeof define != "undefined" && define.amd) define("jsyg-selection",["jsyg","jsyg-resizable","jQuery.Hotkeys"],factory);
     else if (typeof JSYG != "undefined") {
         if (JSYG.Resizable) factory(JSYG,JSYG.Resizable);
         else throw new Error("JSYG.Resizable is needed");
