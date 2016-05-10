@@ -3,14 +3,17 @@
 
 (function(factory) {
     
-    if (typeof define != "undefined" && define.amd) define("jsyg-selection",["jsyg","jsyg-resizable","jQuery.Hotkeys"],factory);
-    else if (typeof JSYG != "undefined") {
-        if (JSYG.Resizable) factory(JSYG,JSYG.Resizable);
+    if (typeof module == "object" && typeof module.exports == "object") {
+      module.exports = factory( require("jquery"), require("jsyg"), require("jsyg-resizable"), require("jquery.hotkeys") );
+    }
+    else if (typeof define != "undefined" && define.amd) define("jsyg-selection",["jquery","jsyg","jsyg-resizable","jquery.hotkeys"],factory);
+    else if (typeof jQuery != "undefined" && typeof JSYG != "undefined") {
+        if (JSYG.Resizable) factory(jQuery,JSYG,JSYG.Resizable);
         else throw new Error("JSYG.Resizable is needed");
     }
-    else throw new Error("JSYG is needed");
+    else throw new Error("jQuery and JSYG are needed");
     
-})(function(JSYG,Resizable) {
+})(function($,JSYG,Resizable) {
     
     "use strict";
     
@@ -391,7 +394,7 @@
     };
     
     Selection.prototype.enableShortCutSelectAll = function() {
-        
+                
         if (!this.enabled || !this.shortCutSelectAll) return this;
         
         var that = this;
@@ -400,13 +403,13 @@
             e.preventDefault();
             that.selectAll();
         }
-        
+                
         this.disableShortCutSelectAll();
         
         $(document).on("keydown",null,this.shortCutSelectAll,selectAll);
         
         this.disableShortCutSelectAll = function() {
-            
+          
             $(document).off("keydown",selectAll);
             return this;
         };
