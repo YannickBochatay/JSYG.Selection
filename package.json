@@ -1,6 +1,6 @@
 {
   "name": "jsyg-selection",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Mouse selection plugin for JSYG framework",
   "main": "JSYG.Selection.js",
   "directories": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "jquery": "^2.2.3",
     "jquery.hotkeys": "^0.1.0",
-    "jsyg": "^0.6.7",
-    "jsyg-resizable": "^0.2.3"
+    "jsyg": "",
+    "jsyg-resizable": ""
   }
 }

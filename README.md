@@ -1,5 +1,5 @@
 # JSYG.Selection
-Mouse selection plugin for JSYG framework
+Mouse selection plugin for [JSYG framework](https://github.com/YannickBochatay/JSYG)
 
 ### Demo
 [http://yannickbochatay.github.io/JSYG.Selection](http://yannickbochatay.github.io/JSYG.Selection/)
