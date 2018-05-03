@@ -6,17 +6,9 @@ Mouse selection plugin for [JSYG framework](https://github.com/YannickBochatay/J
 
 
 ### Installation
-
-##### with npm
 ```shell
 npm install jsyg-selection
 ```
-
-##### with bower
-```shell
-bower install jsyg-selection
-```
-
 
 ### Usage
 
